@@ -8,13 +8,17 @@ Item {
     property string aboutPage: "pages/AboutPage.qml"
 
     function start() {
-        var page = Qt.createComponent(Qt.resolvedUrl(mainPage)).createObject()
-        page.nextPressed.connect(showAbout)
-        pageStack.push(page)
+        var vm = diConsumer.mainVmInstance()
+        vm.nextPressed.connect(showAbout)
+        pushPageWithVm(mainPage, vm)
     }
 
     function showAbout() {
         var page = Qt.createComponent(Qt.resolvedUrl(aboutPage)).createObject()
         pageStack.push(page)
+    }
+
+    function pushPageWithVm(path, vm) {
+        return pageStack.push(Qt.createComponent(Qt.resolvedUrl(path)), { "viewModel" : vm})
     }
 }

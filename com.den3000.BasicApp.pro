@@ -47,6 +47,8 @@ SOURCES += \
     src/main.cpp \
 
 HEADERS += \
+    src/diconsumer.h \
+    src/diprovider.h \
     src/easy_import.h \
     src/mainvm.h
 

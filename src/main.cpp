@@ -40,15 +40,21 @@
 
 #include "mainvm.h"
 
+#include "diconsumer.h"
+
 int main(int argc, char *argv[])
 {
     qmlRegisterType<MainVM>("CustomCppClasses.Module", 1, 0, "MainVM");
+    qmlRegisterType<DiConsumer>("CustomCppClasses.Module", 1, 0, "DiConsumer");
 
     QScopedPointer<QGuiApplication> application(Aurora::Application::application(argc, argv));
     application->setOrganizationName(QStringLiteral("com.den3000"));
     application->setApplicationName(QStringLiteral("BasicApp"));
 
+    auto diConsumer = make_shared<DiConsumer>();
+
     QScopedPointer<QQuickView> view(Aurora::Application::createView());
+    view->rootContext()->setContextProperty("diConsumer", diConsumer.get());
     view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicApp.qml")));
     view->show();
 
