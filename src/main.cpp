@@ -38,8 +38,12 @@
 #include <auroraapp.h>
 #include <QtQuick>
 
+#include "mainvm.h"
+
 int main(int argc, char *argv[])
 {
+    qmlRegisterType<MainVM>("CustomCppClasses.Module", 1, 0, "MainVM");
+
     QScopedPointer<QGuiApplication> application(Aurora::Application::application(argc, argv));
     application->setOrganizationName(QStringLiteral("com.den3000"));
     application->setApplicationName(QStringLiteral("BasicApp"));

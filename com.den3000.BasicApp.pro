@@ -46,6 +46,7 @@ SOURCES += \
     src/main.cpp \
 
 HEADERS += \
+    src/mainvm.h
 
 DISTFILES += \
     qml/Coordinator.qml \

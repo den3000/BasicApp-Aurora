@@ -37,11 +37,13 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import CustomCppClasses.Module 1.0
 
 Page {
     allowedOrientations: Orientation.All
 
     signal nextPressed
+    MainVM { id: viewModel }
 
     PageHeader { title: qsTr("Простое Приложение") }
 
@@ -54,7 +56,10 @@ Page {
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
-            onClicked: nextPressed()
+            onClicked: {
+                // nextPressed() // emit signal
+                viewModel.nextPressed()
+            }
         }
     }
 }
