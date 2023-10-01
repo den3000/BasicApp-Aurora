@@ -12,4 +12,11 @@ using std::make_unique;
 using std::move;
 using std::forward;
 
+template <typename R>
+constexpr inline R * unique_unwrap(unique_ptr<R> && unq) {
+    R * result = unq.get();
+    unq.release();
+    return result;
+}
+
 #endif // EASY_IMPORT_H
