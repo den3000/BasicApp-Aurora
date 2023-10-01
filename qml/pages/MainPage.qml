@@ -41,6 +41,8 @@ import Sailfish.Silica 1.0
 Page {
     allowedOrientations: Orientation.All
 
+    signal nextPressed
+
     PageHeader { title: qsTr("Простое Приложение") }
 
     Column {
@@ -52,7 +54,7 @@ Page {
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
-            onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            onClicked: nextPressed()
         }
     }
 }

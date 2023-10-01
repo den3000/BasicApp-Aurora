@@ -20,12 +20,12 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="44"/>
+        <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>Простое Приложение</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="54"/>
+        <location filename="../qml/pages/MainPage.qml" line="56"/>
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>

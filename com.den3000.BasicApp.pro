@@ -48,6 +48,7 @@ SOURCES += \
 HEADERS += \
 
 DISTFILES += \
+    qml/Coordinator.qml \
     rpm/com.den3000.BasicApp.spec \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
