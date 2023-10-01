@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=com.den3000.BasicApp
+Exec=/usr/bin/com.den3000.BasicApp
+Name=Basic App
+Name[ru]=Простое Приложение
+
+[X-Application]
+Permissions=
+OrganizationName=com.den3000
+ApplicationName=BasicApp
+ExecDBus=/usr/bin/com.den3000.BasicApp
