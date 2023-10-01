@@ -38,7 +38,8 @@
 TARGET = com.den3000.BasicApp
 
 CONFIG += \
-    auroraapp
+    auroraapp\
+    c++1z
 
 PKGCONFIG += \
 
@@ -46,6 +47,7 @@ SOURCES += \
     src/main.cpp \
 
 HEADERS += \
+    src/easy_import.h \
     src/mainvm.h
 
 DISTFILES += \
