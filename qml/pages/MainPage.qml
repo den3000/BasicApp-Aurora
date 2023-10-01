@@ -42,8 +42,8 @@ import CustomCppClasses.Module 1.0
 Page {
     allowedOrientations: Orientation.All
 
-    signal nextPressed
-    MainVM { id: viewModel }
+    property MainVM viewModel
+    onViewModelChanged: viewModel.parent = this
 
     PageHeader { title: qsTr("Простое Приложение") }
 
@@ -57,7 +57,6 @@ Page {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
             onClicked: {
-                // nextPressed() // emit signal
                 viewModel.nextPressed()
             }
         }

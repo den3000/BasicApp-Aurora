@@ -8,12 +8,13 @@
 class MainVM : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QObject * parent READ parent WRITE setParent) // !!! IMPORTANT !!!
+signals:
+    void nextPressed();
 
 public:
     explicit MainVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
     ~MainVM() { qDebug(); }
-
-    Q_INVOKABLE void nextPressed() { qDebug(); }
 };
 
 #endif // MAINVM_H
