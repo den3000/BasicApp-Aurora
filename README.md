@@ -1,30 +1,9 @@
 # Пример элмементарного приложения на Аворра ОС
 
-Пример элмементарного приложения на Аворра ОС
+В данном демо на тривиальном примере (всего два экрана) рассматриваются следующие ключевые моменты:
+1. Создание координатора, который будет управлять PageStack, и т.о. позволит отделить логику навигации от реализации экранов
+2. Разделение каждого экрана на UI представление (QML) и ViewModel, которая создана на стороне C++, чтобы иметь возможность отделить бизнесс-логику экрана от его UI представления
+3. Как сделать инджект ViewModel из С++ в QML и при этом не получить проблем с утечками памяти
+4. Использование DIProvider и DIConsumer для организации и использования DI в приложении
 
-The source code of the project is provided under
-[the license](LICENSE.BSD-3-CLAUSE.md),
-that allows it to be used in third-party applications.
-
-## Project Structure
-
-The project has a common structure
-of an application based on C++ and QML for Aurora OS.
-
-* **[com.den3000.BasicApp.pro](com.den3000.BasicApp.pro)** file
-  describes the project structure for the qmake build system.
-* **[icons](icons)** directory contains application icons for different screen resolutions.
-* **[qml](qml)** directory contains the QML source code and the UI resources.
-  * **[cover](qml/cover)** directory contains the application cover implementations.
-  * **[icons](qml/icons)** directory contains the custom UI icons.
-  * **[pages](qml/pages)** directory contains the application pages.
-  * **[BasicApp.qml](qml/BasicApp.qml)** file
-    provides the application window implementation.
-* **[rpm](rpm)** directory contains the rpm-package build settings.
-  **[com.den3000.BasicApp.spec](rpm/com.den3000.BasicApp.spec)** file is used by rpmbuild tool.
-  It is generated from **[com.den3000.BasicApp.yaml](rpm/com.den3000.BasicApp.yaml)** file.
-* **[src](src)** directory contains the C++ source code.
-  * **[main.cpp](src/main.cpp)** file is the application entry point.
-* **[translations](translations)** directory contains the UI translation files.
-* **[com.den3000.BasicApp.desktop](com.den3000.BasicApp.desktop)** file
-  defines the display and parameters for launching the application.
+Данный код не являтеся прямым руководством к тому, как надо программировать на Аврора ОС с помощью C++/Qt. Это всего лишь попытка перенести подходы выработанные с годами Android и iOS разработчиками на новую платформу.
