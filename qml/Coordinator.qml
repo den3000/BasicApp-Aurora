@@ -10,7 +10,7 @@ Item {
     property string aboutPage: "pages/AboutPage.qml"
 
     function start() {
-        var vm = diConsumer.mainVmInstance()
+        var vm = diProvider.mainVmInstance()
         vm.nextPressed.connect(showAbout)
         decreaseConfirmed.connect(vm.decreased)
 
@@ -18,7 +18,7 @@ Item {
     }
 
     function showAbout(text, counter) {
-        var vm = diConsumer.aboutVmInstance(text, counter)
+        var vm = diProvider.aboutVmInstance(text, counter)
         vm.confirmPressed.connect(decreaseConfirmed)
         vm.confirmPressed.connect(pop)
         pushPageWithVm(aboutPage, vm)

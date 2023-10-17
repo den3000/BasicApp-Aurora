@@ -48,8 +48,8 @@ SOURCES += \
 
 HEADERS += \
     src/aboutvm.h \
-    src/diconsumer.h \
     src/dicontainer.h \
+    src/diprovider.h \
     src/easy_import.h \
     src/mainvm.h
 
