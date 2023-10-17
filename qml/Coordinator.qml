@@ -14,11 +14,16 @@ Item {
     }
 
     function showAbout(text, counter) {
-        var page = Qt.createComponent(Qt.resolvedUrl(aboutPage)).createObject()
-        pageStack.push(page)
+        var vm = diConsumer.aboutVmInstance(counter)
+        vm.confirmPressed.connect(pop)
+        pushPageWithVm(aboutPage, vm)
     }
 
     function pushPageWithVm(path, vm) {
         return pageStack.push(Qt.createComponent(Qt.resolvedUrl(path)), { "viewModel" : vm})
+    }
+
+    function pop() {
+        pageStack.pop()
     }
 }

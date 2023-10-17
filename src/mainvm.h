@@ -30,7 +30,7 @@ public:
     }
 
     Q_INVOKABLE void next() {
-        emit nextPressed("PAM", m_counter);
+        emit nextPressed(QString("Счётчик увеличен до: %1").arg(m_counter), m_counter);
     }
 };
 

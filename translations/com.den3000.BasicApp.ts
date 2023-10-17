@@ -4,8 +4,23 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="44"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
+        <source>Counter: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="55"/>
         <source>О приложении</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <source>Уменьшить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="84"/>
+        <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

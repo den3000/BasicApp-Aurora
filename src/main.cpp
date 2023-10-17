@@ -39,12 +39,14 @@
 #include <QtQuick>
 
 #include "mainvm.h"
+#include "aboutvm.h"
 
 #include "diconsumer.h"
 
 int main(int argc, char *argv[])
 {
     qmlRegisterType<MainVM>("CustomCppClasses.Module", 1, 0, "MainVM");
+    qmlRegisterType<AboutVM>("CustomCppClasses.Module", 1, 0, "AboutVM");
     qmlRegisterType<DiConsumer>("CustomCppClasses.Module", 1, 0, "DiConsumer");
 
     QScopedPointer<QGuiApplication> application(Aurora::Application::application(argc, argv));

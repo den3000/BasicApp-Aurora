@@ -17,5 +17,8 @@ public:
 
     Q_INVOKABLE MainVM * mainVmInstance()
         { return unique_unwrap(diProvider.mainVmInstance()); }
+
+    Q_INVOKABLE AboutVM * aboutVmInstance(int counter)
+        { return unique_unwrap(diProvider.aboutVmInstance(counter)); }
 };
 #endif // DICONSUMER_H
