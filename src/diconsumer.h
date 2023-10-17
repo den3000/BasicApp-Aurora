@@ -2,12 +2,12 @@
 #define DICONSUMER_H
 
 #include <QObject>
-#include "diprovider.h"
+#include "dicontainer.h"
 
 class DiConsumer: public QObject {
     Q_OBJECT
 
-    DiProvider diProvider;
+    DiContainer diContainer;
 
 public:
     explicit DiConsumer(QObject * parent = nullptr)
@@ -16,9 +16,9 @@ public:
     ~DiConsumer() { qDebug(); }
 
     Q_INVOKABLE MainVM * mainVmInstance()
-        { return unique_unwrap(diProvider.mainVmInstance()); }
+        { return unique_unwrap(diContainer.mainVmInstance()); }
 
     Q_INVOKABLE AboutVM * aboutVmInstance(QString const & text, int counter)
-        { return unique_unwrap(diProvider.aboutVmInstance(text, counter)); }
+        { return unique_unwrap(diContainer.aboutVmInstance(text, counter)); }
 };
 #endif // DICONSUMER_H

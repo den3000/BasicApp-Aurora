@@ -1,11 +1,11 @@
-#ifndef DIPROVIDER_H
-#define DIPROVIDER_H
+#ifndef DICONTAINER_H
+#define DICONTAINER_H
 
 #include "easy_import.h"
 #include "mainvm.h"
 #include "aboutvm.h"
 
-class DiProvider {
+class DiContainer {
 public:
     unique_ptr<MainVM> mainVmInstance()
         { return make_unique<MainVM>(); }
@@ -14,4 +14,4 @@ public:
         { return make_unique<AboutVM>(text, counter); }
 };
 
-#endif // DIPROVIDER_H
+#endif // DICONTAINER_H
