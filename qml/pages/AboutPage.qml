@@ -48,6 +48,7 @@ Page {
     Connections {
         target: viewModel
         onDecreased: {
+            txtOld.text = text
             txtCounter.text = qsTr("Counter: %1").arg(counter)
         }
     }

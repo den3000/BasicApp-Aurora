@@ -4,22 +4,22 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="51"/>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>Counter: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="55"/>
+        <location filename="../qml/pages/AboutPage.qml" line="56"/>
         <source>О приложении</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Уменьшить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="84"/>
+        <location filename="../qml/pages/AboutPage.qml" line="85"/>
         <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>

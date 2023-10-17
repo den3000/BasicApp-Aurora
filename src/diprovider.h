@@ -10,8 +10,8 @@ public:
     unique_ptr<MainVM> mainVmInstance()
         { return make_unique<MainVM>(); }
 
-    unique_ptr<AboutVM> aboutVmInstance(int counter)
-        { return make_unique<AboutVM>(counter); }
+    unique_ptr<AboutVM> aboutVmInstance(QString const & text, int counter)
+        { return make_unique<AboutVM>(text, counter); }
 };
 
 #endif // DIPROVIDER_H

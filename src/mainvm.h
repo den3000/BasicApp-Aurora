@@ -32,6 +32,12 @@ public:
     Q_INVOKABLE void next() {
         emit nextPressed(QString("Счётчик увеличен до: %1").arg(m_counter), m_counter);
     }
+
+public slots:
+    void decreased(int counter) {
+        m_counter = counter;
+        emit increased(m_counter);
+    }
 };
 
 #endif // MAINVM_H
