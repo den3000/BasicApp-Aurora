@@ -1,9 +1,11 @@
 #ifndef MAINVM_H
 #define MAINVM_H
 
+#include "easy_import.h"
 #include <QObject>
 #include <QDebug>
 #include <QQuickItem>
+#include "mathservice.h"
 
 class MainVM : public QObject
 {
@@ -12,12 +14,18 @@ class MainVM : public QObject
 
     int m_counter = 0;
 
+    shared_ptr<MathService> m_service;
+
 signals:
     void nextPressed(QString const &, int);
     void increased(int counter);
 
 public:
     explicit MainVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
+    explicit MainVM(shared_ptr<MathService> service, QObject *parent = nullptr)
+        : QObject(parent)
+        , m_service { service }
+    { qDebug(); };
     ~MainVM() { qDebug(); }
 
     Q_INVOKABLE void start() {
@@ -25,7 +33,7 @@ public:
     }
 
     Q_INVOKABLE void increase() {
-        m_counter ++;
+        m_counter = m_service->increaseValue(m_counter);
         emit increased(m_counter);
     }
 

@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QQuickItem>
+#include "mathservice.h"
 
 class AboutVM : public QObject
 {
@@ -14,6 +15,7 @@ class AboutVM : public QObject
 
     QString m_text;
     int m_counter;
+    shared_ptr<MathService> m_service;
 
 signals:
     void confirmPressed(int counter);
@@ -21,10 +23,11 @@ signals:
 
 public:
     explicit AboutVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
-    explicit AboutVM(QString const & text, int counter,  QObject *parent = nullptr)
+    explicit AboutVM(QString const & text, int counter, shared_ptr<MathService> service, QObject *parent = nullptr)
         : QObject(parent)
         , m_text { move(text) }
         , m_counter { counter }
+        , m_service { service }
     { qDebug(); };
     ~AboutVM() { qDebug(); }
 
@@ -33,7 +36,7 @@ public:
     }
 
     Q_INVOKABLE void decrease() {
-        m_counter --;
+        m_counter = m_service->decreaseValue(m_counter);
         emit decreased(m_text, m_counter);
     }
 

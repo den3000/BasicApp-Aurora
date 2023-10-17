@@ -51,7 +51,8 @@ HEADERS += \
     src/dicontainer.h \
     src/diprovider.h \
     src/easy_import.h \
-    src/mainvm.h
+    src/mainvm.h \
+    src/mathservice.h
 
 DISTFILES += \
     qml/Coordinator.qml \
