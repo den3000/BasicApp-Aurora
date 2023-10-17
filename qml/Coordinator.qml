@@ -13,7 +13,7 @@ Item {
         pushPageWithVm(mainPage, vm)
     }
 
-    function showAbout() {
+    function showAbout(text, counter) {
         var page = Qt.createComponent(Qt.resolvedUrl(aboutPage)).createObject()
         pageStack.push(page)
     }

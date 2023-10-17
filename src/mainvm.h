@@ -13,7 +13,7 @@ class MainVM : public QObject
     int m_counter = 0;
 
 signals:
-    void nextPressed();
+    void nextPressed(QString const &, int);
     void increased(int counter);
 
 public:
@@ -27,6 +27,10 @@ public:
     Q_INVOKABLE void increase() {
         m_counter ++;
         emit increased(m_counter);
+    }
+
+    Q_INVOKABLE void next() {
+        emit nextPressed("PAM", m_counter);
     }
 };
 

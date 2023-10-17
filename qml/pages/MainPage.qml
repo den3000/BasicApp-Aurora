@@ -63,7 +63,6 @@ Page {
         Text {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             id: txtCounter
-            text: qsTr("Counter: ")
         }
 
         Button {
@@ -78,7 +77,7 @@ Page {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
             onClicked: {
-                viewModel.nextPressed()
+                viewModel.next()
             }
         }
     }
