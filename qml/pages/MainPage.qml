@@ -45,6 +45,13 @@ Page {
     property MainVM viewModel
     onViewModelChanged: viewModel.parent = this
 
+    Connections {
+        target: viewModel
+        onIncreased: {
+            txtCounter.text = qsTr("Counter: %1").arg(counter)
+        }
+    }
+
     PageHeader { title: qsTr("Простое Приложение") }
 
     Column {
@@ -53,12 +60,32 @@ Page {
         spacing: 16
         anchors.centerIn: parent
 
+        Text {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            id: txtCounter
+            text: qsTr("Counter: ")
+        }
+
+        Button {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            text: qsTr("Увеличить")
+            onClicked: {
+                viewModel.increase()
+            }
+        }
+
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
             onClicked: {
                 viewModel.nextPressed()
             }
+        }
+    }
+
+    onStatusChanged: {
+        if (status == PageStatus.Activating) {
+            viewModel.start()
         }
     }
 }
