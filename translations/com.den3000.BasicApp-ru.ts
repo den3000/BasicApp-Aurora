@@ -27,17 +27,27 @@
 <context>
     <name>AboutPageOld</name>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="7"/>
+        <location filename="../qml/pages/AboutPageOld.qml" line="12"/>
         <source>О приложении</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/AboutPageOld.qml" line="23"/>
+        <source>Было увеличено до = %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPageOld.qml" line="29"/>
+        <source>Уменьшено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageOld.qml" line="34"/>
         <source>Уменьшить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="35"/>
+        <location filename="../qml/pages/AboutPageOld.qml" line="40"/>
         <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>
@@ -76,17 +86,22 @@
 <context>
     <name>MainPageOld</name>
     <message>
-        <location filename="../qml/pages/MainPageOld.qml" line="7"/>
+        <location filename="../qml/pages/MainPageOld.qml" line="9"/>
         <source>Простое Приложение</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPageOld.qml" line="23"/>
+        <location filename="../qml/pages/MainPageOld.qml" line="20"/>
+        <source>Увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageOld.qml" line="25"/>
         <source>Увеличить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPageOld.qml" line="29"/>
+        <location filename="../qml/pages/MainPageOld.qml" line="31"/>
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>
