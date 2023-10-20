@@ -25,6 +25,24 @@
     </message>
 </context>
 <context>
+    <name>AboutPageOld</name>
+    <message>
+        <location filename="../qml/pages/AboutPageOld.qml" line="7"/>
+        <source>О приложении</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageOld.qml" line="29"/>
+        <source>Уменьшить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageOld.qml" line="35"/>
+        <source>Подтвердить</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DefaultCoverPage</name>
     <message>
         <location filename="../qml/cover/DefaultCoverPage.qml" line="46"/>
@@ -51,6 +69,24 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="78"/>
+        <source>Дальше</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainPageOld</name>
+    <message>
+        <location filename="../qml/pages/MainPageOld.qml" line="7"/>
+        <source>Простое Приложение</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageOld.qml" line="23"/>
+        <source>Увеличить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageOld.qml" line="29"/>
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>
