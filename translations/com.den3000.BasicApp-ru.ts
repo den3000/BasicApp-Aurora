@@ -25,29 +25,29 @@
     </message>
 </context>
 <context>
-    <name>AboutPageOld</name>
+    <name>AboutPageV1</name>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="12"/>
+        <location filename="../qml/pages/AboutPageV1.qml" line="12"/>
         <source>О приложении</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="23"/>
+        <location filename="../qml/pages/AboutPageV1.qml" line="23"/>
         <source>Было увеличено до %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="29"/>
+        <location filename="../qml/pages/AboutPageV1.qml" line="29"/>
         <source>Уменьшено до %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="34"/>
+        <location filename="../qml/pages/AboutPageV1.qml" line="34"/>
         <source>Уменьшить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPageOld.qml" line="40"/>
+        <location filename="../qml/pages/AboutPageV1.qml" line="40"/>
         <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>
@@ -105,9 +105,27 @@
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>MainPageV1</name>
     <message>
-        <location filename="../qml/pages/MainPageOld.qml" line="39"/>
-        <source>Сброшено до %1</source>
+        <location filename="../qml/pages/MainPageV1.qml" line="9"/>
+        <source>Простое Приложение</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV1.qml" line="20"/>
+        <source>Увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV1.qml" line="25"/>
+        <source>Увеличить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV1.qml" line="31"/>
+        <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -55,10 +55,10 @@ HEADERS += \
     src/mathservice.h
 
 DISTFILES += \
-    qml/BasicAppOld.qml \
+    qml/BasicAppV1.qml \
     qml/Coordinator.qml \
-    qml/pages/AboutPageOld.qml \
-    qml/pages/MainPageOld.qml \
+    qml/pages/AboutPageV1.qml \
+    qml/pages/MainPageV1.qml \
     rpm/com.den3000.BasicApp.spec \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \

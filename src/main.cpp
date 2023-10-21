@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
     QScopedPointer<QQuickView> view(Aurora::Application::createView());
     view->rootContext()->setContextProperty("diProvider", diProvider.get());
-    view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicAppOld.qml")));
+    view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicAppV1.qml")));
     view->show();
 
     return application->exec();
