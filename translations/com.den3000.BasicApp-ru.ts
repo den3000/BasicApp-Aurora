@@ -33,7 +33,7 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPageOld.qml" line="23"/>
-        <source>Было увеличено до = %1</source>
+        <source>Было увеличено до %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -103,6 +103,11 @@
     <message>
         <location filename="../qml/pages/MainPageOld.qml" line="31"/>
         <source>Дальше</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageOld.qml" line="39"/>
+        <source>Сброшено до %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -34,6 +34,7 @@ Page {
 
                 var page = pageStack.push(Qt.resolvedUrl("AboutPageOld.qml"))
                 page.inputCounter = counter
+
                 page.onConfirmed.connect(function() {
                     counter = page.counter
                 })

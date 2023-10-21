@@ -20,7 +20,7 @@ Page {
         Text {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             id: txtOld
-            text: qsTr("Было увеличено до = %1").arg(inputCounter)
+            text: qsTr("Было увеличено до %1").arg(inputCounter)
         }
 
         Text {
