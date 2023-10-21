@@ -53,6 +53,39 @@
     </message>
 </context>
 <context>
+    <name>AboutPageV2</name>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="12"/>
+        <source>О приложении</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="23"/>
+        <source>Было увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="29"/>
+        <source>Уменьшено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="34"/>
+        <source>Уменьшить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="40"/>
+        <source>Подтвердить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPageV2.qml" line="42"/>
+        <source>counter: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DefaultCoverPage</name>
     <message>
         <location filename="../qml/cover/DefaultCoverPage.qml" line="46"/>
@@ -125,6 +158,29 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPageV1.qml" line="31"/>
+        <source>Дальше</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainPageV2</name>
+    <message>
+        <location filename="../qml/pages/MainPageV2.qml" line="10"/>
+        <source>Простое Приложение</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV2.qml" line="21"/>
+        <source>Увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV2.qml" line="26"/>
+        <source>Увеличить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPageV2.qml" line="32"/>
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>

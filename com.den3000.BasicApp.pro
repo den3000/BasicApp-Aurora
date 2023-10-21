@@ -56,9 +56,13 @@ HEADERS += \
 
 DISTFILES += \
     qml/BasicAppV1.qml \
+    qml/BasicAppV2.qml \
     qml/Coordinator.qml \
+    qml/CoordinatorV2.qml \
     qml/pages/AboutPageV1.qml \
+    qml/pages/AboutPageV2.qml \
     qml/pages/MainPageV1.qml \
+    qml/pages/MainPageV2.qml \
     rpm/com.den3000.BasicApp.spec \
     AUTHORS.md \
     CODE_OF_CONDUCT.md \
