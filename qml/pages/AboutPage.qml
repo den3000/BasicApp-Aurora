@@ -42,16 +42,8 @@ import CustomCppClasses.Module 1.0
 Page {
     allowedOrientations: Orientation.All
 
-    property AboutVM viewModel
-    onViewModelChanged: viewModel.parent = this
-
-    Connections {
-        target: viewModel
-        onDecreased: {
-            txtOld.text = text
-            txtCounter.text = qsTr("Counter: %1").arg(counter)
-        }
-    }
+    AboutVM { id: vm }
+    property AboutVM viewModel: vm
 
     PageHeader { title: qsTr("О приложении") }
 
@@ -64,35 +56,25 @@ Page {
         Text {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             id: txtOld
-            text: "Old value"
+            text: qsTr("Было увеличено до %1").arg(viewModel.inputCounter)
         }
 
         Text {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             id: txtCounter
+            text: qsTr("Counter: %1").arg(viewModel.counter)
         }
 
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Уменьшить")
-            onClicked: {
-                viewModel.decrease()
-            }
+            onClicked: viewModel.decrease()
         }
 
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Подтвердить")
-            onClicked: {
-                viewModel.confirm()
-            }
+            onClicked: viewModel.confirm()
         }
     }
-
-    onStatusChanged: {
-        if (status == PageStatus.Activating) {
-            viewModel.start()
-        }
-    }
-
 }

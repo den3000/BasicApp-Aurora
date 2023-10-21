@@ -26,7 +26,7 @@ public:
     Q_INVOKABLE MainVM * mainVmInstance()
         { return unique_unwrap(diContainer.mainVmInstance(lazyMathService())); }
 
-    Q_INVOKABLE AboutVM * aboutVmInstance(QString const & text, int counter)
-        { return unique_unwrap(diContainer.aboutVmInstance(text, counter, lazyMathService())); }
+    Q_INVOKABLE AboutVM * aboutVmInstance(int counter)
+        { return unique_unwrap(diContainer.aboutVmInstance(counter, lazyMathService())); }
 };
 #endif // DIPROVIDER_H

@@ -4,22 +4,27 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <location filename="../qml/pages/AboutPage.qml" line="65"/>
         <source>Counter: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="56"/>
+        <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>О приложении</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="77"/>
+        <location filename="../qml/pages/AboutPage.qml" line="59"/>
+        <source>Было увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="70"/>
         <source>Уменьшить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="85"/>
+        <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>
@@ -79,11 +84,6 @@
         <source>Подтвердить</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/pages/AboutPageV2.qml" line="42"/>
-        <source>counter: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DefaultCoverPage</name>
@@ -96,22 +96,22 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="51"/>
-        <source>Counter: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainPage.qml" line="55"/>
+        <location filename="../qml/pages/MainPage.qml" line="48"/>
         <source>Простое Приложение</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="70"/>
+        <location filename="../qml/pages/MainPage.qml" line="59"/>
+        <source>Увеличено до %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="64"/>
         <source>Увеличить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="78"/>
+        <location filename="../qml/pages/MainPage.qml" line="70"/>
         <source>Дальше</source>
         <translation type="unfinished"></translation>
     </message>

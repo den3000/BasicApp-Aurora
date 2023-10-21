@@ -13,36 +13,38 @@ class AboutVM : public QObject
     Q_OBJECT
     Q_PROPERTY(QObject * parent READ parent WRITE setParent)
 
-    QString m_text;
-    int m_counter;
-    shared_ptr<MathService> m_service;
+    Q_PROPERTY(int inputCounter READ inputCounter WRITE setInputCounter NOTIFY inputCounterChanged)
+    Q_PROPERTY(int counter READ counter WRITE setCounter NOTIFY counterChanged)
 
-signals:
-    void confirmPressed(int counter);
-    void decreased(QString const & text, int counter);
+    int m_inputCounter = 0;
+    int m_counter = 0;
 
 public:
     explicit AboutVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
-    explicit AboutVM(QString const & text, int counter, shared_ptr<MathService> service, QObject *parent = nullptr)
-        : QObject(parent)
-        , m_text { move(text) }
-        , m_counter { counter }
-        , m_service { service }
-    { qDebug(); };
     ~AboutVM() { qDebug(); }
 
-    Q_INVOKABLE void start() {
-        emit decreased(m_text, m_counter);
+    int inputCounter() const { return m_inputCounter; }
+
+    void setInputCounter(int counter) {
+        m_inputCounter = counter;
+        emit inputCounterChanged(m_inputCounter);
     }
 
-    Q_INVOKABLE void decrease() {
-        m_counter = m_service->decreaseValue(m_counter);
-        emit decreased(m_text, m_counter);
+    int counter() const { return m_counter; }
+
+    void setCounter(int counter) {
+        m_counter = counter;
+        emit counterChanged(m_counter);
     }
 
-    Q_INVOKABLE void confirm() {
-        emit confirmPressed(m_counter);
-    }
+    Q_INVOKABLE void decrease() { setCounter(m_counter - 1); }
+
+    Q_INVOKABLE void confirm() { emit confirmPressed(m_counter); }
+
+signals:
+    void counterChanged(int counter);
+    void inputCounterChanged(int counter);
+    void confirmPressed(int counter);
 };
 
 #endif // ABOUTVM_H

@@ -13,10 +13,11 @@ public:
         { return make_unique<MathService>(); }
 
     unique_ptr<MainVM> mainVmInstance(shared_ptr<MathService> service)
-        { return make_unique<MainVM>(service); }
+//        { return make_unique<MainVM>(service); }
+        { return make_unique<MainVM>(); }
 
-    unique_ptr<AboutVM> aboutVmInstance(QString const & text, int counter, shared_ptr<MathService> service)
-        { return make_unique<AboutVM>(text, counter, service); }
+    unique_ptr<AboutVM> aboutVmInstance(int counter, shared_ptr<MathService> service)
+        { return make_unique<AboutVM>(); }
 };
 
 #endif // DICONTAINER_H

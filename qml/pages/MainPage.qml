@@ -42,15 +42,8 @@ import CustomCppClasses.Module 1.0
 Page {
     allowedOrientations: Orientation.All
 
-    property MainVM viewModel
-    onViewModelChanged: viewModel.parent = this
-
-    Connections {
-        target: viewModel
-        onIncreased: {
-            txtCounter.text = qsTr("Counter: %1").arg(counter)
-        }
-    }
+    MainVM { id: vm }
+    property MainVM viewModel: vm
 
     PageHeader { title: qsTr("Простое Приложение") }
 
@@ -63,28 +56,19 @@ Page {
         Text {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             id: txtCounter
+            text: qsTr("Увеличено до %1").arg(viewModel.counter)
         }
 
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Увеличить")
-            onClicked: {
-                viewModel.increase()
-            }
+            onClicked: viewModel.increase()
         }
 
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
-            onClicked: {
-                viewModel.next()
-            }
-        }
-    }
-
-    onStatusChanged: {
-        if (status == PageStatus.Activating) {
-            viewModel.start()
+            onClicked: viewModel.next()
         }
     }
 }
