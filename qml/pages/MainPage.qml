@@ -53,12 +53,22 @@ Page {
         spacing: 16
         anchors.centerIn: parent
 
+        Text {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            id: txtCounter
+            text: qsTr("Увеличено до %1").arg(viewModel.counter)
+        }
+
+        Button {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            text: qsTr("Увеличить")
+            onClicked: viewModel.increase()
+        }
+
         Button {
             anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
             text: qsTr("Дальше")
-            onClicked: {
-                viewModel.nextPressed()
-            }
+            onClicked: viewModel.next()
         }
     }
 }

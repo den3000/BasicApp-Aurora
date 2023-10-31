@@ -37,9 +37,44 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import CustomCppClasses.Module 1.0
 
 Page {
     allowedOrientations: Orientation.All
 
+    property AboutVM viewModel
+    onViewModelChanged: viewModel.parent = this
+
     PageHeader { title: qsTr("О приложении") }
+
+    Column {
+        id: layout
+        width: parent.width
+        spacing: 16
+        anchors.centerIn: parent
+
+        Text {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            id: txtOld
+            text: qsTr("Было увеличено до %1").arg(viewModel.inputCounter)
+        }
+
+        Text {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            id: txtCounter
+            text: qsTr("Counter: %1").arg(viewModel.counter)
+        }
+
+        Button {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            text: qsTr("Уменьшить")
+            onClicked: viewModel.decrease()
+        }
+
+        Button {
+            anchors { left: parent.left; right: parent.right; margins: Theme.horizontalPageMargin }
+            text: qsTr("Подтвердить")
+            onClicked: viewModel.confirm()
+        }
+    }
 }

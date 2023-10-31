@@ -39,23 +39,30 @@
 #include <QtQuick>
 
 #include "mainvm.h"
+#include "aboutvm.h"
 
-#include "diconsumer.h"
+#include "diprovider.h"
 
 int main(int argc, char *argv[])
 {
     qmlRegisterType<MainVM>("CustomCppClasses.Module", 1, 0, "MainVM");
-    qmlRegisterType<DiConsumer>("CustomCppClasses.Module", 1, 0, "DiConsumer");
+    qmlRegisterType<AboutVM>("CustomCppClasses.Module", 1, 0, "AboutVM");
+    qmlRegisterType<DiProvider>("CustomCppClasses.Module", 1, 0, "DiProvider");
 
     QScopedPointer<QGuiApplication> application(Aurora::Application::application(argc, argv));
     application->setOrganizationName(QStringLiteral("com.den3000"));
     application->setApplicationName(QStringLiteral("BasicApp"));
 
-    auto diConsumer = make_shared<DiConsumer>();
+    auto diProvider = make_shared<DiProvider>();
 
     QScopedPointer<QQuickView> view(Aurora::Application::createView());
-    view->rootContext()->setContextProperty("diConsumer", diConsumer.get());
+    view->rootContext()->setContextProperty("diProvider", diProvider.get());
+    // app with qml coordinator, c++ VMs / service / DI
     view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicApp.qml")));
+    // pure qml app without coordinator and any arch
+    // view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicAppV1.qml")));
+    // pure qml app with coordinator
+    // view->setSource(Aurora::Application::pathTo(QStringLiteral("qml/BasicAppV2.qml")));
     view->show();
 
     return application->exec();
