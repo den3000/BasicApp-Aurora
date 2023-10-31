@@ -15,9 +15,13 @@ class MainVM : public QObject
     Q_PROPERTY(int counter READ counter WRITE setCounter NOTIFY counterChanged)
 
     int m_counter = 0;
-
+    shared_ptr<MathService> m_service;
 public:
     explicit MainVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
+    explicit MainVM(shared_ptr<MathService> service, QObject *parent = nullptr)
+        : QObject(parent)
+        , m_service { service }
+    { qDebug(); };
     ~MainVM() { qDebug(); }
 
     int counter() const { return m_counter; }
@@ -27,7 +31,7 @@ public:
         emit counterChanged(m_counter);
     }
 
-    Q_INVOKABLE void increase() { setCounter(m_counter + 1); }
+    Q_INVOKABLE void increase() { setCounter(m_service->increaseValue(m_counter)); }
 
     Q_INVOKABLE void next() { emit nextPressed(m_counter); }
 

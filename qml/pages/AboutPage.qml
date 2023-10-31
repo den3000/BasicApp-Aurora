@@ -42,8 +42,8 @@ import CustomCppClasses.Module 1.0
 Page {
     allowedOrientations: Orientation.All
 
-    AboutVM { id: vm }
-    property AboutVM viewModel: vm
+    property AboutVM viewModel
+    onViewModelChanged: viewModel.parent = this
 
     PageHeader { title: qsTr("О приложении") }
 

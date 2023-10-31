@@ -10,25 +10,21 @@ Item {
     property string mainPage:  "pages/MainPage.qml"
     property string aboutPage: "pages/AboutPage.qml"
 
-    function pushPage(path) { return pageStack.push(Qt.resolvedUrl(path) ) }
+    function pushPageWithVm(path, vm) { return pageStack.push(Qt.createComponent(Qt.resolvedUrl(path)), { "viewModel" : vm}) }
 
     function pop() { pageStack.pop() }
 
     function start() {
-        var page = pushPage(mainPage)
-        page.viewModel.nextPressed.connect(showAbout)
-        onDecreaseConfirmed.connect(page.viewModel.decreased)
+        var vm = diProvider.mainVmInstance()
+        vm.nextPressed.connect(showAbout)
+        onDecreaseConfirmed.connect(vm.decreased)
+        pushPageWithVm(mainPage, vm)
     }
 
     function showAbout(counter) {
-        var page = pushPage(aboutPage)
-        page.viewModel.inputCounter = counter
-        page.viewModel.counter = counter
-        page.viewModel.confirmPressed.connect(onDecreaseConfirmed)
-        page.viewModel.confirmPressed.connect(pop)
+        var vm = diProvider.aboutVmInstance(counter)
+        vm.confirmPressed.connect(onDecreaseConfirmed)
+        vm.confirmPressed.connect(pop)
+        pushPageWithVm(aboutPage, vm)
     }
-
-//    function pushPageWithVm(path, vm) {
-//        return pageStack.push(Qt.createComponent(Qt.resolvedUrl(path)), { "viewModel" : vm})
-//    }
 }

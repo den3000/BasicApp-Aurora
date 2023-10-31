@@ -4,10 +4,16 @@
 #include <QObject>
 #include "dicontainer.h"
 
+class MyDiContainer: public DiContainer {
+    // DiContainer interface
+protected:
+    int increment() { return 1; }
+};
+
 class DiProvider: public QObject {
     Q_OBJECT
 
-    DiContainer diContainer;
+    MyDiContainer diContainer;
 
     shared_ptr<MathService> m_mathService;
     shared_ptr<MathService> lazyMathService() {

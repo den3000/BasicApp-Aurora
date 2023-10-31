@@ -16,11 +16,17 @@ class AboutVM : public QObject
     Q_PROPERTY(int inputCounter READ inputCounter WRITE setInputCounter NOTIFY inputCounterChanged)
     Q_PROPERTY(int counter READ counter WRITE setCounter NOTIFY counterChanged)
 
-    int m_inputCounter = 0;
-    int m_counter = 0;
-
+    int m_inputCounter;
+    int m_counter;
+    shared_ptr<MathService> m_service;
 public:
     explicit AboutVM(QObject *parent = nullptr): QObject(parent) { qDebug(); };
+    explicit AboutVM(int counter, shared_ptr<MathService> service, QObject *parent = nullptr)
+        : QObject(parent)
+        , m_inputCounter { counter }
+        , m_counter { counter }
+        , m_service { service }
+    { qDebug(); };
     ~AboutVM() { qDebug(); }
 
     int inputCounter() const { return m_inputCounter; }
@@ -37,7 +43,7 @@ public:
         emit counterChanged(m_counter);
     }
 
-    Q_INVOKABLE void decrease() { setCounter(m_counter - 1); }
+    Q_INVOKABLE void decrease() { setCounter(m_service->decreaseValue(m_counter)); }
 
     Q_INVOKABLE void confirm() { emit confirmPressed(m_counter); }
 
